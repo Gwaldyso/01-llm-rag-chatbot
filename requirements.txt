@@ -1,0 +1,12 @@
+langchain
+chromadb
+faiss-cpu
+pypdf
+tiktoken
+python-dotenv
+pandas
+sentence-transformers
+streamlit
+requests
+openai>=1.0.0
+
