@@ -1,40 +1,79 @@
-# 🧠 Chatbot documentaire avec LLM & RAG
+# 🤖 Chatbot Documentaire RAG — Retrieval-Augmented Generation
 
-Ce projet montre comment utiliser un **LLM** et une approche **RAG (Retrieval-Augmented Generation)** pour interroger intelligemment un corpus de documents (PDF, textes métier).
+Ce projet implémente un **chatbot documentaire intelligent**, capable de répondre à des questions en langage naturel en utilisant vos propres documents (PDF, textes, rapports métier…).
 
-## 🎯 Objectif
+Il repose sur une architecture **RAG (Retrieval-Augmented Generation)** combinant :
 
-Permettre à un utilisateur métier de poser des questions en langage naturel sur une base documentaire et d’obtenir des réponses :
-- précises,
-- sourcées,
-- contextualisées par les documents d’origine.
+- embeddings HuggingFace,
+- une base vectorielle ChromaDB,
+- et un modèle de génération OpenAI (GPT-4.1-mini par défaut).
 
-## 🧱 Architecture
+Ce type de pipeline est aujourd’hui utilisé en entreprise pour :  
+- automatiser du support,  
+- analyser des documents internes,  
+- interroger des bases documentaires métier,  
+- créer des assistants LLM privés.
 
-1. **Ingestion** des documents (`data/raw/`)
-2. **Vectorisation** (embeddings) et création d’un index (`data/processed/`)
-3. **RAG** : récupération des passages pertinents
-4. **Génération de la réponse** par le LLM à partir du contexte
+---
 
-_Un schéma de l’architecture est disponible dans `assets/schema.png`._
+# 🎯 Objectif
 
-## 🛠️ Stack technique
+Permettre à un utilisateur de poser des questions naturelles sur ses documents et d’obtenir des réponses :
 
-- Python
-- Langage de modèle : LLM type GPT / open-source (selon dispo)
-- Bibliothèques :
-  - `langchain` ou équivalent
-  - `faiss` / `chromadb` / autre vecteur store
-  - `pandas`, `numpy`
-  - `streamlit` (optionnel si interface web)
+- précises  
+- contextualisées  
+- sourcées par des extraits réels  
 
-## 📁 Structure du projet
+---
 
-Voir l’arborescence détaillée dans le repo.
+# 🧱 Architecture du projet
+
+Voici le pipeline complet :
+
+
+
+
+# 🛠️ Stack technique
+
+### **Langages & Frameworks**
+- Python 3.10+
+- Streamlit (application web)
+
+### **LLM & NLP**
+- HuggingFace SentenceTransformers → `all-MiniLM-L6-v2` pour les embeddings  
+- OpenAI GPT-4.1-mini (ou tout autre modèle compatible) pour la génération
+
+### **Vector Database**
+- ChromaDB (persistant)
+
+### **Autres bibliothèques**
+- `pandas`, `numpy`
+- `openai`
+- `chromadb`
+- `sentence-transformers`
+
+
+
+# 📂 Structure du projet
+
+
+01-llm-rag-chatbot/
+ ├── data/
+ │   ├── raw/                  # Fichiers d’entrée (PDF, TXT…)
+ │   └── processed/
+ │        └── chroma_db/       # Base vectorielle persistante
+ ├── src/
+ │   ├── ingest.py             # Extraction texte + création des chunks
+ │   ├── build_index.py        # Embeddings + insertion dans Chroma
+ │   ├── app.py                # Version console du chatbot RAG
+ │   └── app_streamlit.py      # Application Streamlit
+ ├── requirements.txt
+ ├── .gitignore
+ └── README.md                 # (ce fichier)
+
 
 ## 🚀 Lancer le projet
-
-```bash
+bash
 # Cloner le repo
 git clone https://github.com/Gwaldyso/01-llm-rag-chatbot.git
 cd 01-llm-rag-chatbot
