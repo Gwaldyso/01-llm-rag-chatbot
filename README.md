@@ -1,14 +1,10 @@
-# 🧠 Chatbot documentaire avec LLM & RAG
+# Chatbot documentaire avec LLM & RAG
 
 Ce projet montre comment utiliser un **LLM** et une approche **RAG (Retrieval-Augmented Generation)** pour interroger intelligemment un corpus de documents (PDF, textes métier).
 
 ##  Objectif
 
-Permettre à un utilisateur métier de poser des questions en langage naturel sur une base documentaire et d’obtenir des réponses :
-- précises,
-- sourcées,
-- contextualisées par les documents d’origine.
-
+Permettre à un utilisateur métier de poser des questions en langage naturel sur une base documentaire et d’obtenir des réponses : précises,sourcées et contextualisées par les documents d’origine.
 ##  Architecture
 
 1. **Ingestion** des documents (`data/raw/`)
@@ -41,7 +37,7 @@ cd 01-llm-rag-chatbot
 
 # Créer et activer un environnement virtuel (optionnel mais recommandé)
 
-# 🤖 Chatbot Documentaire RAG — Retrieval-Augmented Generation
+#  Chatbot Documentaire RAG — Retrieval-Augmented Generation
 
 Ce projet implémente un **chatbot documentaire intelligent**, capable de répondre à des questions en langage naturel en utilisant vos propres documents (PDF, textes, rapports métier…).
 
@@ -59,22 +55,6 @@ Ce type de pipeline est aujourd’hui utilisé en entreprise pour :
 
 ---
 
-#  Objectif
-
-Permettre à un utilisateur de poser des questions naturelles sur ses documents et d’obtenir des réponses :
-
-- précises  
-- contextualisées  
-- sourcées par des extraits réels  
-
----
-
-#  Architecture du projet
-
-Voici le pipeline complet :
-
-
-#  Stack technique
 
 ### **Langages & Frameworks**
 - Python 3.10+
@@ -92,7 +72,6 @@ Voici le pipeline complet :
 - `openai`
 - `chromadb`
 - `sentence-transformers`
-
 
 
 #  Structure du projet
@@ -131,8 +110,6 @@ pip install -r requirements.txt
 
 # Lancer le script principal (exemple)
 python src/app.py
-
-
 
 ## Pipeline d’utilisation
 # Étape 1 — Déposer vos documents
