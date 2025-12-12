@@ -103,8 +103,6 @@ bash
 - python -m venv .venv
 - .\.venv\Scripts\activate    # Windows
 
-
->>>>>>> 3409a5748b4ccdf7bafb835a8a1594003e8564af
 # Installer les dépendances
 pip install -r requirements.txt
 
@@ -114,7 +112,7 @@ python src/app.py
 ## Pipeline d’utilisation
 # Étape 1 — Déposer vos documents
 
-Placez vos fichiers PDF/TXT dans :
+lacez vos fichiers PDF/TXT dans :
 
 data/raw/
 
