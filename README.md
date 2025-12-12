@@ -2,14 +2,14 @@
 
 Ce projet montre comment utiliser un **LLM** et une approche **RAG (Retrieval-Augmented Generation)** pour interroger intelligemment un corpus de documents (PDF, textes métier).
 
-## 🎯 Objectif
+##  Objectif
 
 Permettre à un utilisateur métier de poser des questions en langage naturel sur une base documentaire et d’obtenir des réponses :
 - précises,
 - sourcées,
 - contextualisées par les documents d’origine.
 
-## 🧱 Architecture
+##  Architecture
 
 1. **Ingestion** des documents (`data/raw/`)
 2. **Vectorisation** (embeddings) et création d’un index (`data/processed/`)
@@ -18,7 +18,7 @@ Permettre à un utilisateur métier de poser des questions en langage naturel su
 
 _Un schéma de l’architecture est disponible dans `assets/schema.png`._
 
-## 🛠️ Stack technique
+##  Stack technique
 
 - Python
 - Langage de modèle : LLM type GPT / open-source (selon dispo)
@@ -28,13 +28,13 @@ _Un schéma de l’architecture est disponible dans `assets/schema.png`._
   - `pandas`, `numpy`
   - `streamlit` (optionnel si interface web)
 
-## 📁 Structure du projet
+##  Structure du projet
 
 Voir l’arborescence détaillée dans le repo.
 
-## 🚀 Lancer le projet
+##  Lancer le projet
 
-```bash
+
 # Cloner le repo
 git clone https://github.com/Gwaldyso/01-llm-rag-chatbot.git
 cd 01-llm-rag-chatbot
@@ -59,7 +59,7 @@ Ce type de pipeline est aujourd’hui utilisé en entreprise pour :
 
 ---
 
-# 🎯 Objectif
+#  Objectif
 
 Permettre à un utilisateur de poser des questions naturelles sur ses documents et d’obtenir des réponses :
 
@@ -69,14 +69,12 @@ Permettre à un utilisateur de poser des questions naturelles sur ses documents 
 
 ---
 
-# 🧱 Architecture du projet
+#  Architecture du projet
 
 Voici le pipeline complet :
 
 
-
-
-# 🛠️ Stack technique
+#  Stack technique
 
 ### **Langages & Frameworks**
 - Python 3.10+
@@ -97,7 +95,7 @@ Voici le pipeline complet :
 
 
 
-# 📂 Structure du projet
+#  Structure du projet
 
 
 01-llm-rag-chatbot/
@@ -115,7 +113,7 @@ Voici le pipeline complet :
  └── README.md                 # (ce fichier)
 
 
-## 🚀 Lancer le projet
+##  Lancer le projet
 bash
 # Cloner le repo
 - git clone https://github.com/Gwaldyso/01-llm-rag-chatbot.git
@@ -137,7 +135,7 @@ python src/app.py
 
 
 ## Pipeline d’utilisation
-#🔹 Étape 1 — Déposer vos documents
+# Étape 1 — Déposer vos documents
 
 Placez vos fichiers PDF/TXT dans :
 
@@ -145,31 +143,31 @@ data/raw/
 
 ---
 
-#🔹 Étape 2 — Ingestion & chunking
+# Étape 2 — Ingestion & chunking
 - Exécutez le script d’ingestion pour extraire le texte et créer les chunks :
 - Le script génère automatiquement :
 
 ---
 
-#🔹 Étape 3 — Construction de l’index vectoriel
+# Étape 3 — Construction de l’index vectoriel
 - Construisez l’index (embeddings + stockage ChromaDB) :
 - L’index vectoriel persistant sera créé dans :
 
 ---
 
-#🔹 Étape 4 — Version console (CLI)
+# Étape 4 — Version console (CLI)
 - Configurez votre clé OpenAI : 
 - Lancez le chatbot en mode console :
 
 ---
 
-#🔹 Étape 5 — Version web (Streamlit)
+# Étape 5 — Version web (Streamlit)
 - Exportez votre clé OpenAI :
 - Lancez l’interface web :
 
 
 - Accédez ensuite à :  
-👉 http://localhost:8501
+   http://localhost:8501
 
 - Vous verrez :
   - une zone pour poser vos questions  
@@ -179,21 +177,21 @@ data/raw/
 
 ## ⚙️ Fonctionnalités
 
-### 🔹 Chatbot documentaire intelligent
+###  Chatbot documentaire intelligent
 - Posez des questions en langage naturel sur vos documents.
 - Obtenez des réponses contextualisées et structurées.
 
-### 🔹 Pipeline RAG complet
+###  Pipeline RAG complet
 - Ingestion et découpage des documents en chunks.
 - Vectorisation (embeddings) et indexation dans une base vectorielle.
 - Recherche sémantique des passages les plus pertinents.
 - Génération de la réponse en s’appuyant sur le contexte.
 
-### 🔹 Deux modes d’utilisation
+###  Deux modes d’utilisation
 - Mode console (CLI) : interaction dans le terminal.
 - Interface web Streamlit : chatbot accessible via navigateur.
 
-### 🔹 Architecture modulaire
+###  Architecture modulaire
 - Scripts séparés pour :
   - l’ingestion (`ingest.py`)
   - la construction de l’index (`build_index.py`)
@@ -201,9 +199,9 @@ data/raw/
   - le chatbot web (`app_streamlit.py`)
 
 
-## 🧠 Fonctionnement détaillé
+##  Fonctionnement détaillé
 
-### 📌 Embeddings — HuggingFace MiniLM-L6-v2
+###  Embeddings — HuggingFace MiniLM-L6-v2
 - Modèle : `sentence-transformers/all-MiniLM-L6-v2`
 - Caractéristiques :
   - rapide
@@ -215,7 +213,7 @@ data/raw/
 
 ---
 
-### 📌 Vectorisation & Recherche — ChromaDB
+###  Vectorisation & Recherche — ChromaDB
 - Base vectorielle : **ChromaDB** (mode persistant).
 - Rôle :
   - stocker les embeddings des chunks.
@@ -226,7 +224,7 @@ data/raw/
 
 ---
 
-### 📌 Génération — OpenAI GPT-4.1-mini
+###  Génération — OpenAI GPT-4.1-mini
 - Modèle utilisé : `gpt-4.1-mini` (configurable).
 - Rôle :
   - recevoir un **prompt** contenant :
@@ -240,9 +238,9 @@ data/raw/
 
 ---
 
-## 🧩 Points forts du projet
+##  Points forts du projet
 
-### 🔹 Architecture RAG complète
+###  Architecture RAG complète
 - Couverture de toutes les étapes :
   - ingestion
   - embeddings
@@ -250,12 +248,12 @@ data/raw/
   - retrieval
   - génération
 
-### 🔹 Combinaison de technologies modernes
+###  Combinaison de technologies modernes
 - Embeddings HuggingFace + ChromaDB + OpenAI :
   - montre une bonne compréhension des outils actuels de l’IA générative.
   - facilement transposable dans un contexte entreprise.
 
-### 🔹 Code structuré et pédagogique
+###  Code structuré et pédagogique
 - Séparation claire des responsabilités :
   - `ingest.py` pour la préparation des données.
   - `build_index.py` pour la construction de l’index.
